@@ -96,9 +96,9 @@
   section{position:relative;padding:min(13vh,110px) 6vw;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
   @media(max-width:760px){
     section{min-height:0;justify-content:flex-start;padding:60px 6vw;}
-    #hero{min-height:100vh;justify-content:center;}
+    #hero{min-height:0;justify-content:flex-start;}
     #process{margin-top:0 !important;}
-    .brands-section{margin-top:-40px !important;}
+    .brands-section{margin-top:0 !important;}
   }
   #brands{min-height:0;padding-top:0;padding-bottom:0;}
   #process{padding-top:0;min-height:0;margin-top:-180px;}
@@ -106,8 +106,8 @@
   .eyebrow-lg{font-size:1.5rem;font-weight:700;}
 
   /* ===== Hero ===== */
-  #hero{min-height:100svh;align-items:flex-start;padding-top:20px;}
-  .hero-inner{max-width:1100px;margin:auto 0;}
+  #hero{min-height:0;padding-bottom:0;align-items:flex-start;justify-content:flex-start;padding-top:64px;}
+  .hero-inner{max-width:1100px;margin:0;}
   .hero-kicker{font-size:.85rem;color:rgba(242,247,255,0.6);margin-bottom:1.6rem;display:flex;align-items:center;gap:.7rem;}
   .hero-kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px 2px var(--cyan);animation:pulse-dot 2s ease-in-out infinite;}
   @keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.35;}}
@@ -173,6 +173,10 @@
   .glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(160deg, rgba(0,212,255,0.35), rgba(0,123,255,0) 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
 
   .section-head{max-width:640px;margin-bottom:3rem;}
+  #brands .section-head{margin-bottom:0;}
+  /* keep image sliders working when the page switches to Arabic (RTL) */
+  .marquee-wrapper, .marquee-track, .logo-slider, .logo-track{direction:ltr !important;}
+  html[dir="rtl"] .marquee-wrapper, html[dir="rtl"] .marquee-track, html[dir="rtl"] .logo-slider, html[dir="rtl"] .logo-track{direction:ltr !important;}
   .section-title{font-size:clamp(2.15rem,4.6vw,3.4rem);font-weight:600;}
   .section-desc{margin-top:1rem;color:rgba(242,247,255,0.6);font-size:1.02rem;line-height:1.6;}
 
@@ -452,7 +456,6 @@
         </a>
       </div>
     </div>
-    
   </section>
   
   <html lang="ar" dir="rtl">
@@ -593,16 +596,17 @@
               }
       
               .brands-section {
-                  padding: 0 0 10px;
-                  margin-toP:0px; 
+                  padding: 0 0 40px;
+                  margin-top: -250px;
                   text-align: center;
                   color: #fff;
                   overflow: hidden;
               }
       
               .brands-section h2 {
+                  display: none;
                   font-size: 24px;
-                  margin-bottom: 40px;
+                  margin-bottom: 0;
                   letter-spacing: 1px;
               }
       
@@ -797,7 +801,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
       </a>
       </div>
-    <div data-i18n-html="footer.text">Designed & built for <b>Nour Eldein Elebiary</b> — © 2026. Ideas in Higher Resolution.</div>
   </footer>
 
 </main>
@@ -968,7 +971,7 @@
         submitLabel:'Send on WhatsApp',
         waTemplate:"Hi Nour! My name is {name}. I'm interested in: {type}.\n\nProject brief: {message}"
       },
-      footer:{text:''},
+      footer:{text:'Designed & built for <b>Nour Eldein Elebiary</b> — © 2026. Ideas in Higher Resolution.'},
       heroSocials:{whatsapp:'Chat on WhatsApp', instagram:'Instagram', linkedin:'LinkedIn', behance:'Behance', email:'Email'},
       langToggleLabel:'العربية'
     },
